@@ -23,7 +23,6 @@ public class BaseTest {
 
         loginPage = new LoginPage();
         productPage = new ProductPage();
-
     }
 
     @AfterMethod(alwaysRun = true)

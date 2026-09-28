@@ -11,14 +11,17 @@ import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class ProductPage {
-    final SelenideElement ProductBtn = $x("//*[text()=' Выход ']");
-    final ElementsCollection TitleBtn = $$x("//*[@class='es-sidebar__item']");
+    final SelenideElement exitBtn = $x("//*[text()=' Выход ']");
+    final ElementsCollection sidebarBtn = $$x("//*[@class='es-sidebar__item']");
 
     public void waitPageOpen() {
-        ProductBtn.should(exist).shouldBe(visible, Duration.ofSeconds(10));
-        TitleBtn.findBy(text("Правила программы лояльности")).shouldBe(visible);
-        TitleBtn.shouldHave(sizeGreaterThan(0));
-        TitleBtn.shouldHave(size(4));
-        TitleBtn.shouldHave(sizeGreaterThanOrEqual(4));
+        exitBtn.should(exist).shouldBe(visible, Duration.ofSeconds(7));
+    }
+
+    public void sidebarIsVisible() {
+        sidebarBtn.findBy(text("Правила программы лояльности")).shouldBe(visible);
+        sidebarBtn.shouldHave(sizeGreaterThan(0));
+        sidebarBtn.shouldHave(size(4));
+        sidebarBtn.shouldHave(sizeGreaterThanOrEqual(2));
     }
 }

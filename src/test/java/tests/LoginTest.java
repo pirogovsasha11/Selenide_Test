@@ -8,5 +8,6 @@ public class LoginTest extends BaseTest {
         loginPage.openPage();
         loginPage.login();
         productPage.waitPageOpen();
+        productPage.sidebarIsVisible();
     }
 }
